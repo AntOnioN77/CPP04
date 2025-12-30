@@ -29,5 +29,5 @@ WrongDog::~WrongDog()
 
 void WrongDog::makeSound() const
 {
-	std::cout << "Woof woof!!" << std::endl;
+	std::cout << "WrongWoof WrongWoof!!" << std::endl;
 }

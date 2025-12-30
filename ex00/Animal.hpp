@@ -12,9 +12,9 @@ public:
 	Animal();
 	Animal(Animal& src);
 	Animal& operator=(Animal& assign);
-	~Animal();
+	virtual ~Animal();
 	// Additional member functions
-	void makeSound() const;
+	virtual void makeSound() const;
 	std::string getType() const;
 };
 
