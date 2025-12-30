@@ -1,0 +1,57 @@
+{
+  "C++ class header (Ortodox canonical form)": {
+    "prefix": "classhpp",
+    "body": [
+      "#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}_HPP/}",
+      "#define ${TM_FILENAME_BASE/(.*)/${1:/upcase}_HPP/}",
+      "",
+      "#include <string>",
+      "",
+      "class ${1:${TM_FILENAME_BASE}}",
+      "{",
+      "protected:",
+      "\tstd::string type;",
+      "public:",
+      "\t${1}();",
+      "\t${1}(${1}& src);",
+      "\t${1}& operator=(${1}& assign);",
+      "\t~${1}();",
+      "};",
+      "",
+      "#endif // ${TM_FILENAME_BASE/(.*)/${1:/upcase}_HPP/}"
+    ],
+    "description": "Plantilla ortodoxa para .hpp (constructor, copy, assign, destructor)"
+  },
+
+  "C++ class source (Ortodox canonical form)": {
+    "prefix": "classcpp",
+    "body": [
+      "#include \"${TM_FILENAME_BASE}.hpp\"",
+      "",
+      "${1:${TM_FILENAME_BASE}}::${1}()",
+      "{",
+      "\t// constructor",
+      "}",
+      "",
+      "${1:${TM_FILENAME_BASE}}::${1}(${1}& src)",
+      "{",
+      "\t*this = src;",
+      "}",
+      "",
+      "${1}& ${1}::operator=(${1}& assign)",
+      "{",
+      "\tif (this != &assign) {",
+      "\t\t// copy fields",
+      "\t\tthis->type = assign.type;",
+      "\t}",
+      "\treturn *this;",
+      "}",
+      "",
+      "${1}::~${1}()",
+      "{",
+      "\t// destructor",
+      "}"
+    ],
+    "description": "Plantilla ortodoxa para .cpp (implementaciones básicas)"
+  }
+}
