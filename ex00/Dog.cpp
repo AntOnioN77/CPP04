@@ -1,12 +1,12 @@
 #include "Dog.hpp"
 
-Dog::Dog(): Animal()
+Dog::Dog(): AAnimal()
 {
-	Animal::type = "Dog";
+	AAnimal::type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(Dog& src): Animal()
+Dog::Dog(Dog& src): AAnimal()
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	*this = src;
@@ -17,7 +17,7 @@ Dog& Dog::operator=(Dog& assign)
 	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &assign)
 	{
-		this->Animal::operator=(assign);
+		this->AAnimal::operator=(assign);
 	}
 	return *this;
 }

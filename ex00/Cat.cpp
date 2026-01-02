@@ -1,12 +1,12 @@
 #include "Cat.hpp"
 
-Cat::Cat(): Animal()
+Cat::Cat(): AAnimal()
 {
-	Animal::type = "Cat";
+	AAnimal::type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(Cat& src) : Animal()
+Cat::Cat(Cat& src) : AAnimal()
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;
@@ -17,7 +17,7 @@ Cat& Cat::operator=(Cat& assign)
 	std::cout << "Cat assignment operator called" << std::endl;
 	if (this != &assign)
 	{
-		this->Animal::operator=(assign);
+		this->AAnimal::operator=(assign);
 	}
 	return *this;
 }

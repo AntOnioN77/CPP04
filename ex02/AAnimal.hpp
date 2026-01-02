@@ -4,6 +4,7 @@
 # include <string>
 # include <iostream>
 
+// Clase abstracta
 class AAnimal
 {
 protected:
@@ -14,7 +15,7 @@ public:
 	AAnimal& operator=(const AAnimal& assign);
 	virtual ~AAnimal();
 	// Additional member functions
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0; // Pure virtual function
 	std::string getType() const;
 };
 

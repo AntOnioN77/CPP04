@@ -2,19 +2,23 @@
 #define DOG_HPP
 
 #include <string>
-#include "Animal.hpp"
+#include "Brain.hpp"
+#include "AAnimal.hpp"
 
 class Dog: public AAnimal
 {
 protected:
 	std::string type;
+private:
+	Brain* brain;
 public:
 	Dog();
-	Dog(Dog& src);
-	Dog& operator=(Dog& assign);
+	Dog(const Dog& src);
+	Dog& operator=(const Dog& assign);
 	~Dog();
 	// Additional member functions
 	void makeSound() const;
+	Brain* getBrain() const;
 };
 
 #endif

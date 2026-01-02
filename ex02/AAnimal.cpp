@@ -1,17 +1,17 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 AAnimal::AAnimal(): type("unknown")
 {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-AAnimal::AAnimal(AAnimal& src)
+AAnimal::AAnimal(const AAnimal& src)
 {
 	*this = src;
 	std::cout << "Animal copy constructor called" << std::endl;
 }
 
-AAnimal& AAnimal::operator=(AAnimal& assign)
+AAnimal& AAnimal::operator=(const AAnimal& assign)
 {
 	std::cout << "Animal assignment operator called" << std::endl;
 	if(this != &assign)
@@ -24,11 +24,6 @@ AAnimal& AAnimal::operator=(AAnimal& assign)
 AAnimal::~AAnimal()
 {
 	std::cout << "Animal destructor called" << std::endl;
-}
-
-void AAnimal::makeSound() const
-{
-	std::cout << "generic animal sound" << std::endl;
 }
 
 

@@ -4,7 +4,7 @@
 #include <string>
 #include "Animal.hpp"
 
-class Cat: public Animal
+class Cat: public AAnimal
 {
 protected:
 	std::string type;
