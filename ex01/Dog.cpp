@@ -1,15 +1,15 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog(): AAnimal()
+Dog::Dog(): Animal()
 {
-	AAnimal::type = "Dog";
+	Animal::type = "Dog";
 	brain = new Brain;
 	
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& src): AAnimal()
+Dog::Dog(const Dog& src): Animal()
 {
 	type = src.type;
 	brain = new Brain;
@@ -23,7 +23,7 @@ Dog& Dog::operator=(const Dog& assign)
 	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &assign)
 	{
-		this->AAnimal::operator=(assign);
+		this->Animal::operator=(assign);
 		Brain* newBrain = new Brain(*assign.brain); // Puede lanzar una excepcion, y salir de la funcion
 		delete brain;
 		brain = newBrain;

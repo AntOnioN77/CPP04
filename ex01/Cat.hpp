@@ -5,7 +5,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat: public AAnimal
+class Cat: public Animal
 {
 protected:
 	std::string type;

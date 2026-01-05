@@ -23,8 +23,8 @@
 
 /* int main()
 {
-	const AAnimal* j = new Dog();
-	const AAnimal* i = new Cat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
 	Brain* i_brain = ((Cat*) i)->getBrain();
 	i_brain->setIdea(0, "Mices are yummy!");
@@ -84,8 +84,16 @@
 
 int	main(void)
 {
+	//subject example:
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	AAnimal* arr_anim[10];
+
+	delete j;//should not create a leak
+	delete i;
+
+	//array cat/dog requiried:
+	Animal* arr_anim[10];
 
 	for (int i = 0; i <10; i+=2)
 	{
@@ -102,4 +110,6 @@ int	main(void)
 	{
 		delete arr_anim[i];
 	}
+
+	return 0;
 }

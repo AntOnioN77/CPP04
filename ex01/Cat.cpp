@@ -1,15 +1,15 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat(): AAnimal()
+Cat::Cat(): Animal()
 {
-	AAnimal::type = "Cat";
+	Animal::type = "Cat";
 	brain = new Brain;
 
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& src) : AAnimal(src)
+Cat::Cat(const Cat& src) : Animal(src)
 {
 	brain = new Brain;
 	*brain = *src.brain;
@@ -22,7 +22,7 @@ Cat& Cat::operator=(const Cat& assign)
 	std::cout << "Cat assignment operator called" << std::endl;
 	if (this != &assign)
 	{
-		this->AAnimal::operator=(assign);
+		this->Animal::operator=(assign);
 		Brain* newBrain = new Brain(*assign.brain);
 		delete brain;
 		brain = newBrain;

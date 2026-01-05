@@ -27,7 +27,7 @@ int main()
 
 	std::cout << "Original cat idea[0] (esperado: Mices are yummy!): " << i_brain->getIdea(0) << std::endl;
 
-	// Prueba de copia profunda para Cat ✅
+	// Prueba de copia profunda para Cat 
 	// Copy constructor: la copia debe mantener la idea anterior aunque se modifique el original
 	std::cout << "----Copy constructor test (Cat)----" << std::endl;
 	Cat* originalCat = (Cat*)i;
@@ -48,7 +48,7 @@ int main()
 	std::cout << "assign cat idea[0] (esperado: Oh, a ball of yarn!, obtenido): " << assign_brain->getIdea(0) << std::endl;
 	std::cout << "original cat idea[0] (modificado) (esperado: I will catch this bug!, obtenido): " << originalCat->getBrain()->getIdea(0) << std::endl;
 
-	// Pruebas equivalentes para Dog ✅
+	// Pruebas equivalentes para Dog 
 	std::cout << "----DOG: Deep copy tests----" << std::endl;
 	Dog* originalDog = (Dog*)j;
 	Brain* j_brain = originalDog->getBrain();
